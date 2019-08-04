@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 151);
+            this.label1.Location = new System.Drawing.Point(156, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 173);
+            this.label2.Location = new System.Drawing.Point(156, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
@@ -59,14 +59,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(63, 148);
+            this.txtUsuario.Location = new System.Drawing.Point(208, 42);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(168, 20);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(63, 170);
+            this.txtClave.Location = new System.Drawing.Point(208, 64);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(168, 20);
@@ -75,7 +75,7 @@
             // lnkRestablecer
             // 
             this.lnkRestablecer.AutoSize = true;
-            this.lnkRestablecer.Location = new System.Drawing.Point(112, 223);
+            this.lnkRestablecer.Location = new System.Drawing.Point(257, 116);
             this.lnkRestablecer.Name = "lnkRestablecer";
             this.lnkRestablecer.Size = new System.Drawing.Size(119, 13);
             this.lnkRestablecer.TabIndex = 5;
@@ -85,7 +85,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(63, 197);
+            this.btnIngresar.Location = new System.Drawing.Point(208, 90);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(168, 23);
             this.btnIngresar.TabIndex = 6;
@@ -96,7 +96,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::sicoju.desktop.Properties.Resources.law_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(135, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(261, 253);
+            this.ClientSize = new System.Drawing.Size(388, 149);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lnkRestablecer);
             this.Controls.Add(this.txtClave);

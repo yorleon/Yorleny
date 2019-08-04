@@ -77,5 +77,10 @@ namespace sicoju.services
         [OperationContract]
         void DeleteUsuarioPerfil(int pUsuarioPerfilID);
         #endregion
+
+        #region Personas
+        [OperationContract]
+        Involucrado GetInformacionPersona(string pIdentificacion);
+        #endregion
     }
 }

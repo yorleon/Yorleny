@@ -1,13 +1,10 @@
-﻿using sicoju.core;
+﻿using Newtonsoft.Json.Linq;
+using sicoju.core;
 using sicoju.entities.Entities;
 using sicoju.General;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace sicoju.services
 {
@@ -204,6 +201,39 @@ namespace sicoju.services
                 PerfilBL.DeleteUsuarioPerfil(pUsuarioPerfilID);
             }
             catch (Exception ex) { throw ex; }
+        }
+        #endregion
+
+        #region Personas
+        public Involucrado GetInformacionPersona(string pIdentificacion)
+        {
+            var informacionPersona = new Involucrado();
+            try
+            {
+                string url = string.Format(@"https://apis.gometa.org/cedulas/{0}", pIdentificacion);
+                JObject response = HttpRequest.GetResponse(url);
+
+
+                if (response.HasValues)
+                {
+                    var x = response["results"].First();
+                    string identificacion = x.Value<string>("cedula");
+                    string nombre = x.Value<string>("firstname");
+                    string primerApellido = x.Value<string>("lastname1");
+                    string segundoApellido = x.Value<string>("lastname2");
+
+                    informacionPersona.Identificacion = identificacion;
+                    informacionPersona.Nombre = nombre;
+                    informacionPersona.PrimerApellido = primerApellido;
+                    informacionPersona.SegundoApellido = segundoApellido;
+                }
+
+                return informacionPersona;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         #endregion
     }
