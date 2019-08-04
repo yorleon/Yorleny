@@ -45,6 +45,7 @@ namespace sicoju.services
 
         #region Usuarios
         [OperationContract]
+        [ReferencePreservingDataContractFormat]
         Usuario GetUsuario(Usuario pUsuario, Boolean pCompleto = false);
         [OperationContract]
         Usuario CambiarClave(Usuario pUsuario);

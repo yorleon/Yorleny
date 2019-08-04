@@ -19,6 +19,7 @@ namespace sicoju.entities.Entities
         {
             //Disables automatic table join
             this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
     }
