@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/sicoju.entities.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/sicoju.entities.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Caso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CasoID" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleCaso" nillable="true" type="tns:ArrayOfDetalleCaso" />
+      <xs:element minOccurs="0" name="FechaCierre" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaIngreso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="JuezID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sentencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Caso" nillable="true" type="tns:Caso" />
+  <xs:complexType name="ArrayOfDetalleCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleCaso" nillable="true" type="tns:DetalleCaso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleCaso" nillable="true" type="tns:ArrayOfDetalleCaso" />
+  <xs:complexType name="DetalleCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Caso" nillable="true" type="tns:Caso" />
+      <xs:element minOccurs="0" name="CasoID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DetalleCasoID" type="xs:int" />
+      <xs:element minOccurs="0" name="Involucrado" nillable="true" type="tns:Involucrado" />
+      <xs:element minOccurs="0" name="InvolucradoID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoInvolucrado" nillable="true" type="tns:TipoInvolucrado" />
+      <xs:element minOccurs="0" name="TipoInvolucradoID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleCaso" nillable="true" type="tns:DetalleCaso" />
+  <xs:complexType name="Involucrado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleCaso" nillable="true" type="tns:ArrayOfDetalleCaso" />
+      <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvolucradoID" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Involucrado" nillable="true" type="tns:Involucrado" />
+  <xs:complexType name="TipoInvolucrado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleCaso" nillable="true" type="tns:ArrayOfDetalleCaso" />
+      <xs:element minOccurs="0" name="TipoInvolucradoID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoInvolucrado" nillable="true" type="tns:TipoInvolucrado" />
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Caso" nillable="true" type="tns:ArrayOfCaso" />
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Restablecer" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoUsuario" nillable="true" type="tns:TipoUsuario" />
+      <xs:element minOccurs="0" name="TipoUsuarioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioID" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioPerfil" nillable="true" type="tns:ArrayOfUsuarioPerfil" />
+      <xs:element minOccurs="0" name="UsuarioTipoCaso" nillable="true" type="tns:ArrayOfUsuarioTipoCaso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+  <xs:complexType name="ArrayOfCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Caso" nillable="true" type="tns:Caso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCaso" nillable="true" type="tns:ArrayOfCaso" />
+  <xs:complexType name="TipoUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoUsuarioID" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:ArrayOfUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoUsuario" nillable="true" type="tns:TipoUsuario" />
+  <xs:complexType name="ArrayOfUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
+  <xs:complexType name="ArrayOfUsuarioPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuarioPerfil" nillable="true" type="tns:UsuarioPerfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuarioPerfil" nillable="true" type="tns:ArrayOfUsuarioPerfil" />
+  <xs:complexType name="UsuarioPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Perfil" nillable="true" type="tns:Perfil" />
+      <xs:element minOccurs="0" name="PerfilID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:Usuario" />
+      <xs:element minOccurs="0" name="UsuarioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioPerfilID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuarioPerfil" nillable="true" type="tns:UsuarioPerfil" />
+  <xs:complexType name="Perfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormularioPerfil" nillable="true" type="tns:ArrayOfFormularioPerfil" />
+      <xs:element minOccurs="0" name="PerfilID" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioPerfil" nillable="true" type="tns:ArrayOfUsuarioPerfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Perfil" nillable="true" type="tns:Perfil" />
+  <xs:complexType name="ArrayOfFormularioPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormularioPerfil" nillable="true" type="tns:FormularioPerfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormularioPerfil" nillable="true" type="tns:ArrayOfFormularioPerfil" />
+  <xs:complexType name="FormularioPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Formulario" nillable="true" type="tns:Formulario" />
+      <xs:element minOccurs="0" name="FormularioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FormularioPerfilID" type="xs:int" />
+      <xs:element minOccurs="0" name="Perfil" nillable="true" type="tns:Perfil" />
+      <xs:element minOccurs="0" name="PerfilID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormularioPerfil" nillable="true" type="tns:FormularioPerfil" />
+  <xs:complexType name="Formulario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FormularioID" type="xs:int" />
+      <xs:element minOccurs="0" name="FormularioPerfil" nillable="true" type="tns:ArrayOfFormularioPerfil" />
+      <xs:element minOccurs="0" name="Ruta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Formulario" nillable="true" type="tns:Formulario" />
+  <xs:complexType name="ArrayOfUsuarioTipoCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuarioTipoCaso" nillable="true" type="tns:UsuarioTipoCaso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuarioTipoCaso" nillable="true" type="tns:ArrayOfUsuarioTipoCaso" />
+  <xs:complexType name="UsuarioTipoCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoCaso" nillable="true" type="tns:TipoCaso" />
+      <xs:element minOccurs="0" name="TipoCasoID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="tns:Usuario" />
+      <xs:element minOccurs="0" name="UsuarioID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioTipoCasoID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuarioTipoCaso" nillable="true" type="tns:UsuarioTipoCaso" />
+  <xs:complexType name="TipoCaso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCasoID" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioTipoCaso" nillable="true" type="tns:ArrayOfUsuarioTipoCaso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoCaso" nillable="true" type="tns:TipoCaso" />
+  <xs:complexType name="ArrayOfInvolucrado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Involucrado" nillable="true" type="tns:Involucrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvolucrado" nillable="true" type="tns:ArrayOfInvolucrado" />
+  <xs:complexType name="ArrayOfFormulario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Formulario" nillable="true" type="tns:Formulario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormulario" nillable="true" type="tns:ArrayOfFormulario" />
+  <xs:complexType name="ArrayOfPerfil">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Perfil" nillable="true" type="tns:Perfil" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerfil" nillable="true" type="tns:ArrayOfPerfil" />
+</xs:schema>

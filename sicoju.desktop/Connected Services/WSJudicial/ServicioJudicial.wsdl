@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioJudicial" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/sicoju.entities.Entities" />
+      <xsd:import schemaLocation="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/sicoju.General" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioJudicial_GetCasosFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCasosFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetCasosFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCasosFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCasoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetInvolucrados_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvolucrados" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetInvolucrados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvolucradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteDetalleCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDetalleCaso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteDetalleCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDetalleCasoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveCaso_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCaso" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveCaso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCasoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormularios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormularios" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormularios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormulariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormulariosFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormulariosFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormulariosFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormulariosFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormulariosPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormulariosPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetFormulariosPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormulariosPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteFormularioPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormularioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteFormularioPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormularioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveFormularioPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFormularioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveFormularioPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFormularioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_CambiarClave_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarClave" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_CambiarClave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarClaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_ValidarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_ValidarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuariosFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetUsuariosFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsuariosFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfiles" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfilesFiltro_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfilesFiltro" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfilesFiltro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfilesFiltroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeletePerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeletePerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SavePerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SavePerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfilesUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfilesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_GetPerfilesUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerfilesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveUsuarioPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUsuarioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_SaveUsuarioPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUsuarioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteUsuarioPerfil_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuarioPerfil" />
+  </wsdl:message>
+  <wsdl:message name="IServicioJudicial_DeleteUsuarioPerfil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsuarioPerfilResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioJudicial">
+    <wsdl:operation name="GetCasosFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetCasosFiltro" message="tns:IServicioJudicial_GetCasosFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetCasosFiltroResponse" message="tns:IServicioJudicial_GetCasosFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetCaso" message="tns:IServicioJudicial_GetCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetCasoResponse" message="tns:IServicioJudicial_GetCaso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvolucrados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetInvolucrados" message="tns:IServicioJudicial_GetInvolucrados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetInvolucradosResponse" message="tns:IServicioJudicial_GetInvolucrados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDetalleCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteDetalleCaso" message="tns:IServicioJudicial_DeleteDetalleCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteDetalleCasoResponse" message="tns:IServicioJudicial_DeleteDetalleCaso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCaso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SaveCaso" message="tns:IServicioJudicial_SaveCaso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SaveCasoResponse" message="tns:IServicioJudicial_SaveCaso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormularios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormularios" message="tns:IServicioJudicial_GetFormularios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormulariosResponse" message="tns:IServicioJudicial_GetFormularios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormulariosFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormulariosFiltro" message="tns:IServicioJudicial_GetFormulariosFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormulariosFiltroResponse" message="tns:IServicioJudicial_GetFormulariosFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormulariosPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormulariosPerfil" message="tns:IServicioJudicial_GetFormulariosPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetFormulariosPerfilResponse" message="tns:IServicioJudicial_GetFormulariosPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormularioPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteFormularioPerfil" message="tns:IServicioJudicial_DeleteFormularioPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteFormularioPerfilResponse" message="tns:IServicioJudicial_DeleteFormularioPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormularioPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SaveFormularioPerfil" message="tns:IServicioJudicial_SaveFormularioPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SaveFormularioPerfilResponse" message="tns:IServicioJudicial_SaveFormularioPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SaveFormulario" message="tns:IServicioJudicial_SaveFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SaveFormularioResponse" message="tns:IServicioJudicial_SaveFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteFormulario" message="tns:IServicioJudicial_DeleteFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteFormularioResponse" message="tns:IServicioJudicial_DeleteFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuario" message="tns:IServicioJudicial_GetUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuarioResponse" message="tns:IServicioJudicial_GetUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/CambiarClave" message="tns:IServicioJudicial_CambiarClave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/CambiarClaveResponse" message="tns:IServicioJudicial_CambiarClave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/ValidarUsuario" message="tns:IServicioJudicial_ValidarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/ValidarUsuarioResponse" message="tns:IServicioJudicial_ValidarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuarios" message="tns:IServicioJudicial_GetUsuarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuariosResponse" message="tns:IServicioJudicial_GetUsuarios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuariosFiltro" message="tns:IServicioJudicial_GetUsuariosFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetUsuariosFiltroResponse" message="tns:IServicioJudicial_GetUsuariosFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteUsuario" message="tns:IServicioJudicial_DeleteUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteUsuarioResponse" message="tns:IServicioJudicial_DeleteUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SaveUsuario" message="tns:IServicioJudicial_SaveUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SaveUsuarioResponse" message="tns:IServicioJudicial_SaveUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfiles" message="tns:IServicioJudicial_GetPerfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfilesResponse" message="tns:IServicioJudicial_GetPerfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfilesFiltro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfilesFiltro" message="tns:IServicioJudicial_GetPerfilesFiltro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfilesFiltroResponse" message="tns:IServicioJudicial_GetPerfilesFiltro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeletePerfil" message="tns:IServicioJudicial_DeletePerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeletePerfilResponse" message="tns:IServicioJudicial_DeletePerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SavePerfil" message="tns:IServicioJudicial_SavePerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SavePerfilResponse" message="tns:IServicioJudicial_SavePerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfilesUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfilesUsuario" message="tns:IServicioJudicial_GetPerfilesUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/GetPerfilesUsuarioResponse" message="tns:IServicioJudicial_GetPerfilesUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUsuarioPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/SaveUsuarioPerfil" message="tns:IServicioJudicial_SaveUsuarioPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/SaveUsuarioPerfilResponse" message="tns:IServicioJudicial_SaveUsuarioPerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuarioPerfil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteUsuarioPerfil" message="tns:IServicioJudicial_DeleteUsuarioPerfil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioJudicial/DeleteUsuarioPerfilResponse" message="tns:IServicioJudicial_DeleteUsuarioPerfil_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioJudicial" type="tns:IServicioJudicial">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCasosFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetCasosFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaso">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetCaso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvolucrados">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetInvolucrados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDetalleCaso">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeleteDetalleCaso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCaso">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SaveCaso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormularios">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetFormularios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormulariosFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetFormulariosFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormulariosPerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetFormulariosPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormularioPerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeleteFormularioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormularioPerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SaveFormularioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFormulario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SaveFormulario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFormulario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeleteFormulario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarClave">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/CambiarClave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarios">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetUsuariosFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeleteUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SaveUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfiles">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetPerfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfilesFiltro">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetPerfilesFiltro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeletePerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SavePerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerfilesUsuario">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/GetPerfilesUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUsuarioPerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/SaveUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsuarioPerfil">
+      <soap:operation soapAction="http://tempuri.org/IServicioJudicial/DeleteUsuarioPerfil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioJudicial">
+    <wsdl:port name="BasicHttpBinding_IServicioJudicial" binding="tns:BasicHttpBinding_IServicioJudicial">
+      <soap:address location="http://192.168.100.11/ServicioJudicial.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

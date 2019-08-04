@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="55bbfd94-371d-4f47-894e-98c03db4bb9e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.100.11/ServicioJudicial.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioJudicial.xsd" MetadataType="Schema" ID="3e2bdad3-a503-4fea-b9c7-a56bd84336af" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServicioJudicial1.xsd" MetadataType="Schema" ID="232d3bd2-68f8-4b3c-b1c1-038edcb62dd3" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicioJudicial2.xsd" MetadataType="Schema" ID="5c2a63e4-321c-4126-acdb-30d22b705910" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicioJudicial.disco" MetadataType="Disco" ID="2a817b15-2067-4bf6-9686-a42f9ea07630" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?disco" />
+    <MetadataFile FileName="ServicioJudicial.wsdl" MetadataType="Wsdl" ID="b15eaf7a-bcb3-4d79-8796-a26ac77d50c2" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?wsdl" />
+    <MetadataFile FileName="ServicioJudicial3.xsd" MetadataType="Schema" ID="c40901c1-169a-4e5f-8b47-b68be01e84dd" SourceId="1" SourceUrl="http://192.168.100.11/ServicioJudicial.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
